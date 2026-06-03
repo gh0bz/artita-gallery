@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artita Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf9f7;
+      --ink: #1a1813;
+      --muted: #8a857c;
+      --border: #e8e4df;
+      --radius: 12px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 8vw, 88px);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1;
+    }
+
+    .subtitle {
+      margin-top: 14px;
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #fff;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.09);
+    }
+
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: #f0ede8;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover .card-img img {
+      transform: scale(1.03);
+    }
+
+    .card-body {
+      padding: 24px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .card-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 4px;
+    }
+
+    .card-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .card-footer svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--ink);
+      fill: none;
+      stroke-width: 1.5;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover .card-footer svg {
+      transform: translate(2px, -2px);
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      .grid { grid-template-columns: 1fr; max-width: 420px; }
+      h1 { font-size: 52px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="eyebrow">Select a direction</div>
+    <h1>Artita</h1>
+    <p class="subtitle">Three distinct visions — one collection.</p>
+  </header>
+
+  <div class="grid">
+
+    <a class="card" href="./rose/" target="_blank" rel="noopener">
+      <div class="card-img">
+        <img src="./screenshots/rose.png" alt="Rose — Artita Gallery" />
+      </div>
+      <div class="card-body">
+        <div class="card-label">Direction 01</div>
+        <div class="card-title">Rose</div>
+        <div class="card-desc">Grid-first editorial layout. Warm ivory tones with a curated product grid as the opening statement.</div>
+      </div>
+      <div class="card-footer">
+        <span>Open site</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </div>
+    </a>
+
+    <a class="card" href="./sable/" target="_blank" rel="noopener">
+      <div class="card-img">
+        <img src="./screenshots/sable.png" alt="Sable — Artita Gallery" />
+      </div>
+      <div class="card-body">
+        <div class="card-label">Direction 02</div>
+        <div class="card-title">Sable</div>
+        <div class="card-desc">Full-bleed model hero. Golden warmth with an immersive photography-first opening experience.</div>
+      </div>
+      <div class="card-footer">
+        <span>Open site</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </div>
+    </a>
+
+    <a class="card" href="./noir/" target="_blank" rel="noopener">
+      <div class="card-img">
+        <img src="./screenshots/noir.png" alt="Noir — Artita Gallery" />
+      </div>
+      <div class="card-body">
+        <div class="card-label">Direction 03</div>
+        <div class="card-title">Noir</div>
+        <div class="card-desc">Bold split hero. Charcoal and ivory with typographic strength — designed to command attention.</div>
+      </div>
+      <div class="card-footer">
+        <span>Open site</span>
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>© 2026 Artita Gallery</footer>
+
+</body>
+</html>
